@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormGroup, Validators, FormControl} from '@angular/forms';
-import {AuthServiceService} from '../auth-service.service';
+import {AuthServiceService} from '../services/auth-service.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {catchError} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import {catchError} from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
-  constructor(private authService: AuthServiceService, public dialog: MatDialog) { }
+  constructor(private authService: AuthServiceService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
         result => {
         if (result.token_type === 'bearer'){
           console.log(result.access_token);
+          localStorage.setItem('token', result.access_token);
+          this.router.navigate(['']);
         }
     }, error => {
           this.dialog.open(DialogElementsExampleDialog, {
