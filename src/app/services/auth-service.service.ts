@@ -17,6 +17,9 @@ export class AuthServiceService {
     return this.http.post(baseUrl + '/auth', this.credentials);
   }
   logout(): void {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+  }
+  register(data): Observable<any>{
+    return this.http.post(baseUrl + '/user', data);
   }
 }

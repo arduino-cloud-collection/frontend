@@ -16,6 +16,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LogoutComponent } from './logout/logout.component';
 import { MainComponent } from './main/main.component';
+import { RegisterComponent } from './register/register.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { MainComponent } from './main/main.component';
     LoginComponent,
     DialogElementsExampleDialog,
     LogoutComponent,
-    MainComponent
+    MainComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
@@ -38,7 +42,8 @@ import { MainComponent } from './main/main.component';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule
 
 
     ],
