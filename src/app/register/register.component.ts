@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {DialogElementsExampleDialog} from '../login/login.component';
+import {DialogElementsExampleDialog} from '../login/login/login.component';
 import {AuthServiceService} from '../services/auth-service.service';
 import {Router} from '@angular/router';
 
