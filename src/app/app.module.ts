@@ -14,17 +14,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-import { LogoutComponent } from './logout/logout.component';
+import { LogoutComponent } from './logout/logout/logout.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
 import {MatIconModule} from '@angular/material/icon';
 import {LoginModule} from './login/login.module';
+import {LogoutModule} from './logout/logout.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogoutComponent,
     MainComponent,
     RegisterComponent
   ],
@@ -43,9 +43,8 @@ import {LoginModule} from './login/login.module';
         ReactiveFormsModule,
         MatDialogModule,
         MatIconModule,
-        LoginModule
-
-
+        LoginModule,
+        LogoutModule
     ],
   providers: [],
   bootstrap: [AppComponent]
