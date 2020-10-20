@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {DialogElementsExampleDialog} from '../login/login/login.component';
-import {AuthServiceService} from '../services/auth-service.service';
+import {DialogElementsExampleDialog} from '../../login/login/login.component';
+import {AuthServiceService} from '../../services/auth-service.service';
 import {Router} from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   hide: boolean;
   formGroup: FormGroup;
 
-  constructor(private authService: AuthServiceService, private router: Router) { }
+  constructor(private authService: AuthServiceService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -46,6 +47,17 @@ export class RegisterComponent implements OnInit {
           }
         );
       }
+      else {
+        this.dialog.open(DialogPassword, {
+          width: '250px',
+          data: { msg: 'The passwords aren\'t matching.' }
+        });
+      }
     }
     }
 }
+@Component({
+  selector: 'dialog-password',
+  templateUrl: 'dialog-password.html',
+})
+export class DialogPassword {}

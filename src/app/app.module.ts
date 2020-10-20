@@ -16,17 +16,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LogoutComponent } from './logout/logout/logout.component';
 import { MainComponent } from './main/main.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './register/register/register.component';
 import {MatIconModule} from '@angular/material/icon';
 import {LoginModule} from './login/login.module';
 import {LogoutModule} from './logout/logout.module';
+import {RegisterModule} from './register/register.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    RegisterComponent
   ],
     imports: [
         BrowserModule,
@@ -44,7 +44,8 @@ import {LogoutModule} from './logout/logout.module';
         MatDialogModule,
         MatIconModule,
         LoginModule,
-        LogoutModule
+        LogoutModule,
+        RegisterModule
     ],
   providers: [],
   bootstrap: [AppComponent]
