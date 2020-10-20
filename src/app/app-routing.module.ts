@@ -5,7 +5,7 @@ import {LogoutComponent} from './logout/logout/logout.component';
 import {JwtGuardGuard} from './guards/jwt-guard.guard';
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {RegisterComponent} from './register/register/register.component';
-import {MainComponent} from './main/main.component';
+import {MainComponent} from './main/main/main.component';
 
 
 const routes: Routes = [
