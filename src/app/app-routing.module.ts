@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import {LogoutComponent} from './logout/logout.component';
+import { LoginComponent } from './login/login/login.component';
+import {LogoutComponent} from './logout/logout/logout.component';
 import {JwtGuardGuard} from './guards/jwt-guard.guard';
-import {MainComponent} from './main/main.component';
 import {LoggedInGuard} from './guards/logged-in.guard';
-import {RegisterComponent} from './register/register.component';
+import {RegisterComponent} from './register/register/register.component';
+import {MainComponent} from './main/main/main.component';
 
 
 const routes: Routes = [
   {path: '', component: MainComponent, canActivate: [JwtGuardGuard]},
-  {path: 'login', component: LoginComponent, canActivate: [LoggedInGuard]},
-  {path: 'logout', component: LogoutComponent},
-  {path: 'register', component: RegisterComponent, canActivate: [LoggedInGuard]}
+//  {path: 'login', component: LoginComponent, canActivate: [LoggedInGuard]},
+  // {path: 'register', component: RegisterComponent, canActivate: [LoggedInGuard]}
 ];
 
 @NgModule({
