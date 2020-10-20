@@ -20,6 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {LoginModule} from './login/login.module';
 import {LogoutModule} from './logout/logout.module';
 import {RegisterModule} from './register/register.module';
+import {MainModule} from './main/main.module';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {RegisterModule} from './register/register.module';
         MatIconModule,
         LoginModule,
         LogoutModule,
-        RegisterModule
+        RegisterModule,
+        MainModule
     ],
   providers: [],
   bootstrap: [AppComponent]
