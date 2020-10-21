@@ -4,3 +4,10 @@
 .spacer {
   padding: 0 7px;
 }
+.toolbar-text {
+  font-size: 17px;
+}
+
+.link-img {
+  margin: 0px 0px -3.5px 0px;
+}

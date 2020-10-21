@@ -1,0 +1,7 @@
+<button mat-icon-button aria-label="user-button" [mat-menu-trigger-for]="menu">
+  <mat-icon>account_circle</mat-icon>
+</button>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item (click)="settings_click()"><mat-icon>settings</mat-icon><span>Settings</span></button>
+  <button mat-menu-item (click)="logout_click()"><mat-icon>logout</mat-icon><span>Logout</span></button>
+</mat-menu>

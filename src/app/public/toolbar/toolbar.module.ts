@@ -5,16 +5,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
+import { UserdropdownComponent } from './userdropdown/userdropdown.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
-  declarations: [ToolbarComponent],
+  declarations: [ToolbarComponent, UserdropdownComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
     MatIconModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
 
   ],
   exports: [
