@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button aria-label="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button disableRipple (click)="home_click()">
+      <span class="spacer toolbar-text">Arduino-Cloud</span>
+    </button>
+    <span class="filler"></span>
+    <button mat-button>
+      <a href="https://github.com/arduino-cloud-collection">
+        <div>
+          <img src="https://material.angular.io/assets/img/homepage/github-circle-white-transparent.svg" class="spacer link-img">
+          <span class="toolbar-text">GitHub</span>
+        </div>
+      </a>
+    </button>
+    <app-userdropdown></app-userdropdown>
+  </mat-toolbar-row>
+</mat-toolbar>

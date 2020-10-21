@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
+import {ToolbarModule} from '../public/toolbar/toolbar.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {MatIconModule} from '@angular/material/icon';
     ReactiveFormsModule,
     MatDialogModule,
     MatIconModule,
-    MainRoutingModule
+    MainRoutingModule,
+    ToolbarModule
 
 
   ],

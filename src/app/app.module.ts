@@ -21,6 +21,7 @@ import {LoginModule} from './login/login.module';
 import {LogoutModule} from './logout/logout.module';
 import {RegisterModule} from './register/register.module';
 import {MainModule} from './main/main.module';
+import {SettingsModule} from './settings/settings.module';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {MainModule} from './main/main.module';
         LoginModule,
         LogoutModule,
         RegisterModule,
-        MainModule
+        MainModule,
+        SettingsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
