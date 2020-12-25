@@ -6,10 +6,12 @@
         <input matInput placeholder="Username" formControlName="username">
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password">
+        <input matInput type="password" [type]="passwordHide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+        <mat-icon matSuffix (click)="passwordHide = !passwordHide">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password2">
+        <input matInput type="password" [type]="password2Hide ? 'password' : 'text'" placeholder="Password" formControlName="password2">
+        <mat-icon matSuffix (click)="password2Hide = !password2Hide">{{password2Hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
       <button color="primary" mat-raised-button type="submit">Login</button>
     </form>
