@@ -22,6 +22,8 @@ import {LogoutModule} from './logout/logout.module';
 import {RegisterModule} from './register/register.module';
 import {MainModule} from './main/main.module';
 import {SettingsModule} from './settings/settings.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import {SettingsModule} from './settings/settings.module';
         LogoutModule,
         RegisterModule,
         MainModule,
-        SettingsModule
+        SettingsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
   providers: [],
   bootstrap: [AppComponent]
