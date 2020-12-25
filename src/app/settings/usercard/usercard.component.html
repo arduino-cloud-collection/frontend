@@ -1,9 +1,9 @@
-<mat-card class="usercard">
+<mat-card class="usercard" ngClass.xs="usercard-little" ngClass.sm="usercard-small">
   <div class="usercard-content">
     <mat-card-title>User Settings</mat-card-title>
     <mat-card-content>
         <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="userSettings">
-          <div fxLayout.xs="column" fxLayout="row" fxLayoutGap="30px">
+          <div  fxLayout="row wrap" fxLayoutGap="30px" class="input-container">
             <mat-form-field>
               <input matInput placeholder="Username" formControlName="username" value="test">
             </mat-form-field>
