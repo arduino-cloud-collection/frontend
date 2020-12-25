@@ -1,0 +1,14 @@
+.mat-card-title{
+  font-size: 15px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+#submitbutton{
+  width: 100%;
+  align-self: center;
+}
+.usercard-content{
+  margin-left: 15x;
+  margin-right: 15px;
+  align-self: center;
+}
