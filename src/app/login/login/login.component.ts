@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.formGroup.value).subscribe(
         result => {
         if (result.token_type === 'bearer'){
-          console.log(result.access_token);
           localStorage.setItem('token', result.access_token);
+          localStorage.setItem('username', this.formGroup.value.username);
           this.router.navigate(['']);
         }
     }, error => {
