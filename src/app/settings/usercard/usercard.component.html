@@ -2,13 +2,10 @@
   <div class="usercard-content">
     <mat-card-title>User Settings</mat-card-title>
     <mat-card-content>
-        <form [formGroup]="userSettings">
+        <form [formGroup]="userSettings" (ngSubmit)="updateUser()">
           <div  fxLayout="row wrap" fxLayoutGap="30px" class="input-container">
             <mat-form-field>
               <input matInput placeholder="Username" formControlName="username" value="test">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Email" formControlName="email" value="">
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Password" [type]="passwordHide ? 'password' : 'text'" type="password" formControlName="password">

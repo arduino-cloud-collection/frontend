@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {DialogElementsExampleDialog} from '../../login/login/login.component';
-import {AuthServiceService} from '../../services/auth-service.service';
+import {AuthServiceService} from '../../services/auth/auth-service.service';
 import {Router} from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
