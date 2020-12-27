@@ -20,4 +20,8 @@ export class ControllerService {
     return this.http.delete(baseUrl + '/controller/' + uuid, {
       headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
   }
+  getControllerById(uuid: string): Observable<any>{
+    return this.http.get(baseUrl + '/controller/' + uuid, {
+      headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
+  }
 }

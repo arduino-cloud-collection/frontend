@@ -20,13 +20,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ControllercardComponent } from './controllercard/controllercard.component';
+import { SinglecontrollerComponent } from './singlecontroller/singlecontroller.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
     DashboardComponent,
-    ControllercardComponent
+    ControllercardComponent,
+    SinglecontrollerComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class ControllercardComponent implements OnInit {
   ngOnInit(): void {
   }
   cardClick(): void {
-    console.log('click');
+    this.router.navigate(['/controller/' + this.controller.uuid]);
   }
   controllerRemove(): void {
     this.controllerService.removeController(this.controller.uuid).subscribe(result => {
