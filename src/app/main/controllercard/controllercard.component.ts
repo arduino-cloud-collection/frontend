@@ -22,7 +22,7 @@ export class ControllercardComponent implements OnInit {
   controllerRemove(): void {
     this.controllerService.removeController(this.controller.uuid).subscribe(result => {
       this.active = false;
-      this.router.navigate(['']).then(r => this.ngOnInit());
+      window.location.href = this.router.url;
     });
   }
 }
