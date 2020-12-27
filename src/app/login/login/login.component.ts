@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  passwordHide: boolean;
   formGroup: FormGroup;
-  constructor(private authService: AuthServiceService, public dialog: MatDialog, private router: Router) { }
 
+  constructor(private authService: AuthServiceService, public dialog: MatDialog, private router: Router) {
+    this.passwordHide = true;
+  }
   ngOnInit(): void {
     this.initForm();
   }
@@ -23,14 +26,13 @@ export class LoginComponent implements OnInit {
       password: new FormControl( '', [Validators.required])
     });
   }
-  // tslint:disable-next-line:typedef
   loginProcess(){
     if (this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(
         result => {
         if (result.token_type === 'bearer'){
-          console.log(result.access_token);
           localStorage.setItem('token', result.access_token);
+          localStorage.setItem('username', this.formGroup.value.username);
           this.router.navigate(['']);
         }
     }, error => {

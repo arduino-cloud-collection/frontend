@@ -18,6 +18,7 @@ export class AuthServiceService {
   }
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
   }
   register(data): Observable<any>{
     return this.http.post(baseUrl + '/user', data);

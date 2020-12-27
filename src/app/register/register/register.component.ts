@@ -11,15 +11,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  hide: boolean;
   formGroup: FormGroup;
+  passwordHide: boolean;
+  password2Hide: boolean;
 
-  constructor(private authService: AuthServiceService, private router: Router, public dialog: MatDialog) { }
-
+  constructor(private authService: AuthServiceService, private router: Router, public dialog: MatDialog) {
+    this.passwordHide = true;
+    this.password2Hide = true;
+  }
   ngOnInit(): void {
     this.initForm();
   }
-  // tslint:disable-next-line:typedef
   initForm(){
     this.formGroup = new FormGroup({
       username: new FormControl('', [Validators.required]),
@@ -27,7 +29,6 @@ export class RegisterComponent implements OnInit {
       password2: new FormControl('', [Validators.required])
     });
   }
-  // tslint:disable-next-line:typedef
   registerProcess(){
     if (this.formGroup.valid){
       if (this.formGroup.value.password === this.formGroup.value.password2) {
