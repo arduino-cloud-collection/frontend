@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit{
   generateRows(): number {
     const count: number = this.cards.length + 1;
     if (count % 4 === 0){
-      return 2;
+      return 1;
     }
     else if (count % 3 === 0){
       return 2;

@@ -16,4 +16,8 @@ export class ControllerService {
     return this.http.get(baseUrl + '/controller', {
       headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
   }
+  removeController(uuid: string): Observable<any>{
+    return this.http.delete(baseUrl + '/controller/' + uuid, {
+      headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
+  }
 }
