@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ControllercardComponent } from './controllercard/controllercard.component';
 import { SinglecontrollerComponent } from './singlecontroller/singlecontroller.component';
+import {DialogCreationComponent, NewcontrollerComponent} from './newcontroller/newcontroller.component';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { SinglecontrollerComponent } from './singlecontroller/singlecontroller.c
     MainComponent,
     DashboardComponent,
     ControllercardComponent,
-    SinglecontrollerComponent
+    SinglecontrollerComponent,
+    NewcontrollerComponent,
+    DialogCreationComponent
   ],
   imports: [
     BrowserModule,
