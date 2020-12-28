@@ -1,10 +1,15 @@
 <h1 mat-dialog-title>Create a new Controller</h1>
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" fxLayoutAlign="stretch" fxLayout="column">
   <mat-form-field>
     <input matInput placeholder="Controller Name" formControlName="name">
   </mat-form-field>
 </form>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>
-  <button (click)="createController()" mat-button mat-dialog-close>Create</button>
+  <button id="create-button" (click)="createController()" mat-button mat-dialog-close>Create</button>
 </div>
+<style>
+  #create-button{
+    margin-left: auto;
+  }
+</style>
