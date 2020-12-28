@@ -1,5 +1,10 @@
-<h1 mat-dialog-title>Password Error</h1>
-<div mat-dialog-content>The passwords aren't matching</div>
+<h1 mat-dialog-title>Create a new Controller</h1>
+<form [formGroup]="formGroup">
+  <mat-form-field>
+    <input matInput placeholder="Controller Name" formControlName="name">
+  </mat-form-field>
+</form>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button (click)="createController()" mat-button mat-dialog-close>Create</button>
 </div>

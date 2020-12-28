@@ -24,4 +24,8 @@ export class ControllerService {
     return this.http.get(baseUrl + '/controller/' + uuid, {
       headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
   }
+  createController(name: string): Observable<any>{
+    return this.http.post(baseUrl + '/controller/', {name}, {
+      headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}});
+  }
 }
