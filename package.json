@@ -7,10 +7,14 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --env=heroku"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~11.0.5",
+    "@angular/compiler-cli": "~11.0.5",
+    "typescript": "~4.0.5",
     "@angular/animations": "~11.0.5",
     "@angular/cdk": "^10.2.4",
     "@angular/common": "~11.0.5",
@@ -46,5 +50,9 @@
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
     "typescript": "~4.0.5"
+  },
+  "engines": {
+    "node": "15.5.0",
+    "npm": "6.14.10"
   }
 }
