@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Edit Controller</h1>
+<form [formGroup]="formGroup" fxLayoutAlign="stretch" fxLayout="column">
+  <mat-form-field>
+    <input [value]="name" matInput placeholder="Controller Name" formControlName="name">
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button id="create-button" (click)="updateController()" mat-button mat-dialog-close>Update</button>
+</div>
+<style>
+  #create-button{
+    margin-left: auto;
+  }
+</style>
