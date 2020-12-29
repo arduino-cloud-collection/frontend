@@ -28,6 +28,7 @@
     "@angular/service-worker": "~11.0.5",
     "@sentry/angular": "^5.29.2",
     "@sentry/tracing": "^5.29.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.3",
