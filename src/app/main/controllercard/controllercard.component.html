@@ -1,0 +1,19 @@
+<mat-card class="dashboard-card" *ngIf="active">
+  <mat-card-header>
+    <mat-card-title>
+      {{controller.name}}
+      <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item>Expand</button>
+        <button mat-menu-item (click)="controllerRemove()">Remove</button>
+      </mat-menu>
+    </mat-card-title>
+  </mat-card-header>
+  <div (click)="cardClick()">
+    <mat-card-content class="dashboard-card-content">
+      <div>Card Content Here</div>
+    </mat-card-content>
+  </div>
+</mat-card>

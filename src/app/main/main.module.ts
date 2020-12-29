@@ -15,11 +15,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {ToolbarModule} from '../public/toolbar/toolbar.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
+import { ControllercardComponent } from './controllercard/controllercard.component';
+import { SinglecontrollerComponent } from './singlecontroller/singlecontroller.component';
+import {DialogCreationComponent, NewcontrollerComponent} from './newcontroller/newcontroller.component';
+import {DialogEditComponent, EditcontrollerComponent} from './editcontroller/editcontroller.component';
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    DashboardComponent,
+    ControllercardComponent,
+    SinglecontrollerComponent,
+    NewcontrollerComponent,
+    DialogCreationComponent,
+    EditcontrollerComponent,
+    DialogEditComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +51,10 @@ import {ToolbarModule} from '../public/toolbar/toolbar.module';
     MatDialogModule,
     MatIconModule,
     MainRoutingModule,
-    ToolbarModule
+    ToolbarModule,
+    MatGridListModule,
+    MatMenuModule,
+    LayoutModule
 
 
   ],
