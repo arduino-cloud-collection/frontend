@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, ErrorHandler, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +24,26 @@ import {MainModule} from './main/main.module';
 import {SettingsModule} from './settings/settings.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import * as Sentry from '@sentry/angular';
+import {Integrations} from '@sentry/tracing';
+import {Router} from '@angular/router';
 
+if (environment.production) {
+  Sentry.init({
+    dsn: 'https://c34e6f019cbe4b64af5cf878e7543b8f@o485696.ingest.sentry.io/5573762',
+    autoSessionTracking: true,
+    integrations: [
+      new Integrations.BrowserTracing({
+        tracingOrigins: ['localhost', 'https://arduinoapi.herokuapp.com/'],
+        routingInstrumentation: Sentry.routingInstrumentation,
+      }),
+    ],
+
+    // We recommend adjusting this value in production, or using tracesSampler
+    // for finer control
+    tracesSampleRate: 1.0,
+  });
+}
 
 @NgModule({
   declarations: [
@@ -52,7 +71,24 @@ import { environment } from '../environments/environment';
         SettingsModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useValue: Sentry.createErrorHandler({
+        showDialog: true,
+      }),
+    },
+    {
+      provide: Sentry.TraceService,
+      deps: [Router],
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: () => () => {},
+      deps: [Sentry.TraceService],
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
