@@ -30,7 +30,7 @@ import {Router} from '@angular/router';
 
 if (environment.production) {
   Sentry.init({
-    dsn: 'https://c34e6f019cbe4b64af5cf878e7543b8f@o485696.ingest.sentry.io/5573762',
+    dsn: 'http://c34e6f019cbe4b64af5cf878e7543b8f@o485696.ingest.sentry.io/5573762',
     autoSessionTracking: true,
     integrations: [
       new Integrations.BrowserTracing({
