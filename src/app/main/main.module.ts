@@ -23,6 +23,7 @@ import { ControllercardComponent } from './controllercard/controllercard.compone
 import { SinglecontrollerComponent } from './singlecontroller/singlecontroller.component';
 import {DialogCreationComponent, NewcontrollerComponent} from './newcontroller/newcontroller.component';
 import {DialogEditComponent, EditcontrollerComponent} from './editcontroller/editcontroller.component';
+import { PinlistComponent } from './pinlist/pinlist.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {DialogEditComponent, EditcontrollerComponent} from './editcontroller/edi
     NewcontrollerComponent,
     DialogCreationComponent,
     EditcontrollerComponent,
-    DialogEditComponent
+    DialogEditComponent,
+    PinlistComponent
   ],
   imports: [
     BrowserModule,
