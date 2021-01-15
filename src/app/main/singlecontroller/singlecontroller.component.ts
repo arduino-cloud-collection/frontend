@@ -18,7 +18,7 @@ export class SinglecontrollerComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       console.log(params.uuid);
       this.controllerService.getControllerById(params.uuid).subscribe(result => {
-        this.controller = new Controller(result.name, result.uuid, 1, 1);
+        this.controller = new Controller(result.name, result.uuid, 1, 1, result.pins);
       });
     });
   }

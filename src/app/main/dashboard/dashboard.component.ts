@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.controllerService.getControllers().subscribe(result => {
       Object.keys(result).map(key => {
-        this.cards.push(new Controller(result[key].name, result[key].uuid, this.generateCols(), this.generateRows()));
+        this.cards.push(new Controller(result[key].name, result[key].uuid, this.generateCols(), this.generateRows(), result[key].pins));
       });
     });
     console.log(this.cards);
